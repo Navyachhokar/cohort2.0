@@ -13,8 +13,8 @@ body {
     font-weight: 400;
     /* color: #1d1d1f; */
     color: #fff;
-    background-color: #000;
-    line-height: 1.4;
+    background-color: #fff;
+    line-height: 1.25;
     text-align: center;
 }
 main,footer{
@@ -50,6 +50,7 @@ i{
     background-image: url(https://www.apple.com/v/home/ch/images/heroes/iphone-17-pro/hero_iphone_17_pro__bknyzxfk2agi_large_2x.jpg);
     background-size: cover;
     background-position: center;
+    background-color: #fff;
     height:100%;
     width: 100%;
     display: flex;
@@ -92,25 +93,119 @@ button{
     padding: 10px 20px;
     border: none;
     color: #fff;
-    background-color: rgb(56, 93, 205);
+    background-color:#217de7;
     font-size: 18px;
     font-weight: 400;
     text-align: center;
 }
 
-#btn1{
-
-}
 #btn2{
     background-color: black; 
-    color: royalblue; 
-    border: 1px solid royalblue;
+    color: #217de7; 
+    border: 1px solid #217de7;
 }
 
 #btn2:hover{
-    background-color: royalblue;
+    background-color:#217de7;
     color: #fff;
 }
 #btn1:hover{
-    background-color: rgb(65, 100, 205);
+    background-color: #2787f4 ;
+}
+
+.subAreaOne{
+    background-image: url(https://www.apple.com/v/home/ch/images/heroes/iphone-air/hero_iphone_air__0gxyavihpiqu_large_2x.jpg);
+    background-size: cover;
+    background-position: center;
+    color:#1d1d1f;
+    height:100%;
+    width: 100%;
+    padding: 30px;
+    margin-top: 12px;
+}
+
+.subAreaOne #btn2, .subAreaTwo #btn2, .subAreaThree #btn2, .subAreaFour #btn2, .subAreaFive #btn2, .subAreaSix #btn2{
+    background-color: #fff;
+    color:#217de7;
+}
+.subAreaOne #btn2:hover, .subAreaTwo #btn2:hover, .subAreaThree #btn2:hover, .subAreaFour #btn2:hover, .subAreaFive #btn2:hover, .subAreaSix #btn2:hover{
+    background-color: #217de7;
+    color: #fff;
+}
+.subAreaOne , .subAreaTwo h1{
+    font-size: 60px;
+}
+.subAreaOne , .subAreaTwo h2{
+    font-size: 25px;
+}
+
+.subAreaTwo{
+    background-image: url(https://www.apple.com/v/home/ch/images/heroes/iphone-17/hero_iphone_17__c5vvimu9a20y_large_2x.jpg);
+    background-size: cover;
+    background-position: center;
+    color:#1d1d1f;
+    height:100%;
+    width: 100%;
+    padding: 30px;
+    margin: 12px 0 12px 0;
+}
+
+.subAreaThree{
+    background-image: url(https://www.apple.com/v/home/ch/images/promos/apple-watch-series-11/promo_apple_watch_series_11__b63hxviqvonm_large_2x.jpg);
+    background-size: cover;
+    background-position: center;
+    color:#1d1d1f;
+    height:100%;
+    width: 100%;
+    padding: 30px;
+    margin: 0 12px 0 12px;
+}
+
+.subAreaFour{
+    background-image: url(https://www.apple.com/v/home/ch/images/promos/airpods-pro-3/promo_airpodspro_3__f6xmza7bglei_large_2x.jpg);
+    background-size: cover;
+    background-position: center;
+    color:#1d1d1f;
+    height:100%;
+    width: 100%;
+    padding: 30px;
+    margin: 0 12px 0 0;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 12px 0 12px 0;
+}
+
+.subAreaFive{
+    background-image: url(https://www.apple.com/v/home/ch/images/promos/macbook-air/promo_macbook_air__fqowrtnxewqe_large_2x.jpg);
+    background-size: cover;
+    background-position: center;
+    color:#1d1d1f;
+    height:100%;
+    width: 100%;
+    padding: 30px;
+    margin: 0 12px 0 12px  ;
+}
+
+.subAreaSix{
+    background-image: url(https://www.apple.com/v/home/ch/images/promos/ipad-air/promo_ipad_air_avail__6i02t7nujr62_large_2x.jpg);
+    background-size: cover;
+    background-position: center;
+    color:#1d1d1f;
+    height:100%;
+    width: 100%;
+    padding: 30px;
+    margin: 0 12px 0 0;
+}
+.subAreaThree h2, .subAreaFour h2, .subAreaFive h2, .subAreaSix  h2{
+    font-size: 20px;
+    
+}
+.subAreaThree h1, .subAreaFour h1, .subAreaFive h1, .subAreaSix h1{
+    font-size: 40px;
+    font-weight:500 ;
 }
