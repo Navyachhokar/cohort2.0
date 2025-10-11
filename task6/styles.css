@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+nav img{
+    width: 170px;
+    height: 100px;
+    object-fit: cover;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 20px;
+}
+.nav-section1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+span{
+     padding: 2px;
+     margin: 3px;
+     display: flex;
+     width: 25px;
+     background-color: black;
+     border-radius: 5px;
+}
+
+.site-nav-burger {
+   background-color: white;
+   border: 1px solid white;
+}
+.site-nav-burger span:nth-child(2){
+    width: 20px;
+}
+.site-nav-burger span:nth-child(3){
+    width: 15px;
+}
+.search {
+    background-color: #f1f0f0;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    width: 500px;
+    justify-content: space-between;
+    font-size: 15px;
+    color:rgb(63, 58, 58);
+    font-weight: 500;
+}
+input{
+    border: none;
+    background-color: #f1f0f0;
+    color: rgb(45, 43, 43);
+    width: 300px;
+    height: 30px;
+    margin: 0 20px;
+    font-size: 14px;
+}
+input::placeholder{
+    color: rgb(44, 43, 43);
+}
+.search input:focus{
+    outline: none;
+    border: none;
+}
+.search:focus-within{
+    border: 2px solid rgba(223, 86, 132,0.2)
+}
+.right-sect{
+    margin:10px;
+}
+.search button{
+    background-color: rgba(223, 71, 122, 0.9);
+    border-radius: 50px;
+    height: 40px;
+    width: 40px;
+    color: white;
+    border: none;
+    font-size: 20px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.nav-section2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.nav-section2 a{
+    font-weight: 650;
+    color: black;
+    text-decoration: none;
+}
+
+.nav-section2 button{
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    font-weight: 650;
+    padding: 16px 20px ;
+    font-size:  15px;
+
+}
