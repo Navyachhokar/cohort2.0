@@ -3,6 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+@font-face {
+    font-family: Satoshi;
+    src: url(./Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Light.woff);
+}
+@font-face {
+    font-family: chillax;
+    src: url(./Chillax_Complete/Fonts/WEB/fonts/Chillax-Regular.woff);
+}
+@font-face {
+    font-family: Roboto Mono;
+    src: url(./roboto-mono-webfont/RobotoMono-Light.woff);
+}
 @mixin flex-column($gap:0rem){
     display: flex;
     flex-direction: column;
@@ -13,11 +25,12 @@ html, body {
     width: 100%;
 }
 html{
-     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-     color: rgb(167, 165, 165);
+     font-family: Satoshi, sans-serif;
+     color:#eae8e4;
+    
 }
 body{
-    background-color: rgb(32, 30, 30);
+    background-color: #121212;
 }
 
 main{
@@ -27,8 +40,8 @@ main{
     
     section{
         width: 100%;
-        @include flex-column(2rem);
-        padding: 0.5rem;
+        @include flex-column(1rem);
+        padding: 1rem;
         
 
         .top{
@@ -41,31 +54,76 @@ main{
         }
         
         .bottom{
-            background-color: #292929;
-            border-radius: 10px;;
-            padding: 1rem;
-            @include flex-column(2.5rem);
+            background-color: #1e1e1e;
+            border-radius: 10px; 
+            padding: 2rem;
+            font-size: 0.9rem;
+            font-weight:900;
+            @include flex-column(5.5rem);
         }
 
         .text{
-            @include flex-column(0.7rem);
+            @include flex-column(1rem);
+            
             h1{
                 font-weight: 300;
-                font-size: 2rem;
+                font-size: 2.3rem;
                 text-transform: uppercase;
+                font-family: chillax, sans-serif;
             }
             p{
                 font-weight: 300;
-                font-size: 1rem;
+                font-size: 20px;
+                padding-right: 1rem;
                 opacity: 0.8;
-                line-height: 2;
+                color:rgba(244, 242, 237, .6);;
+                line-height: 160%;
             }
-            button{
-                width:fit-content;
-                border:none;
-                outline:none;
-                padding: 0.7rem 1rem;
-                border-radius: 0.5rem;
+            .arrow{
+                display: flex;
+                gap: 1rem;
+                padding: 0.5rem 0 0 0;
+                
+
+                i{
+                    font-weight: 100;
+                    padding: 1rem;
+                    background-color: rgba(255, 255, 255, .05);
+                    color: rgb(244, 242, 237);
+                    border-color: 2px solid rgba(255, 255, 255, .15);
+                    border-radius: 50px;
+                    
+                }
+                button{
+                    width:fit-content;
+                    border:none;
+                    outline:none;
+                    font-weight: 700;
+                    background-color: #1e1e1e;
+                    color: #eae8e4;
+                    font-size: 0.85rem;
+                    letter-spacing:1.5px;
+                    font-family:Roboto Mono, sans-serif;
+                }
+            }
+            
+        }
+    }
+}
+
+@media (min-width:900px){
+    main{
+        gap: 0rem;
+
+        section{
+            flex-direction: row;
+
+            .top , .bottom{
+                width: 50%;
+            }
+
+            .bottom{
+                justify-content: space-between;
             }
         }
     }
