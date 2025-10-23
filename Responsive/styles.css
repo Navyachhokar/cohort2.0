@@ -217,6 +217,68 @@ main section.view4 .bottom .text p {
   color: rgba(244, 242, 237, 0.6);
   line-height: 160%;
 }
+main section.view5 {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+}
+main section.view5 h1 {
+  padding: 0rem 1rem;
+  font-weight: 500;
+  font-family: chillax, sans-serif;
+}
+main section.view5 .card {
+  width: 100%;
+  background-image: url(./assets/card1.png);
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 1/1;
+  border-radius: 0.7rem;
+  padding: 1.2rem;
+  margin: 1rem 0rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  justify-content: space-between;
+}
+main section.view5 .card .bottom, main section.view5 .card i {
+  background-color: rgba(183, 174, 174, 0.0509803922);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.0509803922);
+}
+main section.view5 .card .top {
+  display: flex;
+  justify-content: right;
+}
+main section.view5 .card .top .icons {
+  display: flex;
+  gap: 0.7rem;
+}
+main section.view5 .card .top .icons i {
+  padding: 0.7rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+main section.view5 .card .bottom {
+  display: flex;
+  padding: 1.5rem 1rem;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.7rem;
+}
+main section.view5 .card .bottom .name {
+  font-family: chillax, sans-serif;
+  font-size: 1.5rem;
+}
+main section.view5 .card:nth-child(2) {
+  background-image: url("./assets/card2.png");
+}
+main section.view5 .card:nth-child(3) {
+  background-image: url("./assets/card3.png");
+}
 
 section {
   max-width: 2000px;
@@ -271,6 +333,14 @@ section {
     gap: 2rem;
   }
   main section.view4 .bottom .paragraphs p {
+    font-size: 1rem;
+  }
+  main section.view5 {
+    flex-direction: row;
+    padding: 1rem 1rem;
+    gap: 1rem;
+  }
+  main section.view5 p {
     font-size: 1rem;
   }
 }/*# sourceMappingURL=styles.css.map */

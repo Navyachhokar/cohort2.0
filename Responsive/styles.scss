@@ -224,6 +224,73 @@ main{
             }
         }
     }
+    section.view5{
+        width: 100%;
+        padding: 1rem;
+        @include flex-column(0rem);
+
+        h1{
+            padding: 0rem 1rem;
+            font-weight: 500;
+            font-family: chillax,sans-serif;
+        }
+        .card{
+            width: 100%;
+            background-image: url(./assets/card1.png);
+            background-size: cover;
+            background-position: center;
+            aspect-ratio: 1/1;
+            border-radius: 0.7rem;
+            padding: 1.2rem;
+            margin: 1rem 0rem;
+            @include flex-column(0rem);
+            justify-content: space-between;
+
+            .bottom, i{
+                background-color: #b7aeae0d;
+                backdrop-filter: blur(5px);
+                border: 1px solid #FFFFFF0D;
+            }
+            .top{
+               display: flex;
+               justify-content: right;
+    
+               .icons{
+                  display: flex;
+                  gap: 0.7rem;
+
+                    i{
+                    
+                       padding: 0.7rem;
+                       border-radius: 50%;
+                       font-size: 1.5rem;
+                     
+                    }
+                } 
+            }
+
+            .bottom{
+               display: flex;
+               padding: 1.5rem 1rem;
+               justify-content: space-between;
+               align-items: center;
+               border-radius: 0.7rem;
+
+               .name{
+                font-family: chillax, sans-serif;
+                font-size: 1.5rem;
+               }   
+            }
+        }
+       .card:nth-child(2){
+        background-image: url("./assets/card2.png");
+       }
+       .card:nth-child(3){
+        background-image: url("./assets/card3.png");
+       }
+    
+    }
+    
 }
 section{
     max-width: 2000px;
@@ -290,5 +357,16 @@ section{
             }
            }
         }
+        section.view5{
+           flex-direction: row;
+           padding: 1rem 1rem;
+           gap: 1rem;
+
+           p{
+              font-size: 1rem;
+           }
+           
+        }
     }
+    
 }
