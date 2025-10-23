@@ -32,61 +32,62 @@ body {
 }
 
 main {
-  width: 100%;
+  width: 100vw;
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 0rem;
 }
-main section {
+main section.view1 {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
   padding: 1rem;
 }
-main section .top {
+main section.view1 .top {
   width: 100%;
 }
-main section .top img {
+main section.view1 .top img {
   width: 100%;
   border-radius: 10px;
 }
-main section .bottom {
+main section.view1 .bottom {
   background-color: #1e1e1e;
   border-radius: 10px;
-  padding: 2rem;
+  padding: 3rem;
   font-size: 0.9rem;
   font-weight: 900;
   display: flex;
   flex-direction: column;
   gap: 5.5rem;
 }
-main section .text {
+main section.view1 .text {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-main section .text h1 {
+main section.view1 .text h1 {
   font-weight: 300;
-  font-size: 2.3rem;
+  font-size: 3.3rem;
   text-transform: uppercase;
+  line-height: 1.2;
   font-family: chillax, sans-serif;
 }
-main section .text p {
+main section.view1 .text p {
   font-weight: 300;
-  font-size: 20px;
+  font-size: 22px;
   padding-right: 1rem;
   opacity: 0.8;
   color: rgba(244, 242, 237, 0.6);
   line-height: 160%;
 }
-main section .text .arrow {
+main section.view1 .text .arrow {
   display: flex;
   gap: 0.7rem;
   padding: 0.5rem 0 0 0;
 }
-main section .text .arrow i {
+main section.view1 .text .arrow i {
   font-weight: 100;
   padding: 0.7rem;
   background-color: rgba(255, 255, 255, 0.05);
@@ -94,7 +95,7 @@ main section .text .arrow i {
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 50px;
 }
-main section .text .arrow button {
+main section.view1 .text .arrow button {
   width: -moz-fit-content;
   width: fit-content;
   border: none;
@@ -106,6 +107,34 @@ main section .text .arrow button {
   letter-spacing: 1.5px;
   font-family: Roboto Mono, sans-serif;
 }
+main section.view2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  font-family: chillax, sans-serif;
+}
+main section.view2 .top, main section.view2 .bottom {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 1rem;
+}
+main section.view2 .top .element, main section.view2 .bottom .element {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+main section.view2 .top .element small, main section.view2 .bottom .element small {
+  font-size: 1rem;
+  opacity: 0.6;
+}
+main section.view2 .top .element h2, main section.view2 .bottom .element h2 {
+  font-size: 3rem;
+  font-weight: 300;
+}
 
 section {
   max-width: 2000px;
@@ -116,13 +145,16 @@ section {
   main {
     gap: 0rem;
   }
-  main section {
+  main section.view1 {
     flex-direction: row;
   }
-  main section .top, main section .bottom {
+  main section.view1 .top, main section.view1 .bottom {
     width: 50%;
   }
-  main section .bottom {
+  main section.view1 .bottom {
     justify-content: space-between;
+  }
+  main section.view2 {
+    flex-direction: row;
   }
 }/*# sourceMappingURL=styles.css.map */

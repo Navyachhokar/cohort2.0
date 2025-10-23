@@ -35,11 +35,11 @@ body{
 }
 
 main{
-    width: 100%;
+    width: 100vw;
     align-items: center;
     @include flex-column(0rem);
     
-    section{
+    section.view1{
         width: 100%;
         @include flex-column(0.7rem);
         padding: 1rem;
@@ -57,7 +57,7 @@ main{
         .bottom{
             background-color: #1e1e1e;
             border-radius: 10px; 
-            padding: 2rem;
+            padding: 3rem;
             font-size: 0.9rem;
             font-weight:900;
             @include flex-column(5.5rem);
@@ -68,16 +68,18 @@ main{
             
             h1{
                 font-weight: 300;
-                font-size: 2.3rem;
+                font-size: 3.3rem;
                 text-transform: uppercase;
+                line-height: 1.2;
                 font-family: chillax, sans-serif;
+                
             }
             p{
                 font-weight: 300;
-                font-size: 20px;
+                font-size: 22px;
                 padding-right: 1rem;
                 opacity: 0.8;
-                color:rgba(244, 242, 237, .6);;
+                color:rgba(244, 242, 237, 0.6);
                 line-height: 160%;
             }
             .arrow{
@@ -110,6 +112,35 @@ main{
             
         }
     }
+
+    section.view2{
+        @include flex-column(1rem);
+        width: 100%;
+        padding: 1rem;
+        font-family:chillax, sans-serif;
+
+        .top, .bottom{
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            padding: 1rem;
+
+            .element{
+                text-align: center;
+                @include flex-column(0.2rem);
+
+                small{
+                    font-size:1rem;
+                    opacity: 0.6;
+                }
+
+                h2{
+                    font-size: 3rem;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
 }
 section{
     max-width: 2000px;
@@ -119,7 +150,7 @@ section{
     main{
         gap: 0rem;
 
-        section{
+        section.view1{
             flex-direction: row;
 
             .top , .bottom{
@@ -129,6 +160,10 @@ section{
             .bottom{
                 justify-content: space-between;
             }
+        }
+
+        section.view2{
+            flex-direction: row;  
         }
     }
 }
