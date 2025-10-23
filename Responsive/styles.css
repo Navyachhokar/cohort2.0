@@ -55,8 +55,8 @@ main section.view1 .top img {
 main section.view1 .bottom {
   background-color: #1e1e1e;
   border-radius: 10px;
-  padding: 3rem;
-  font-size: 0.9rem;
+  padding: 2.5rem;
+  font-size: 1rem;
   font-weight: 900;
   display: flex;
   flex-direction: column;
@@ -77,7 +77,6 @@ main section.view1 .text h1 {
 main section.view1 .text p {
   font-weight: 300;
   font-size: 22px;
-  padding-right: 1rem;
   opacity: 0.8;
   color: rgba(244, 242, 237, 0.6);
   line-height: 160%;
@@ -135,6 +134,49 @@ main section.view2 .top .element h2, main section.view2 .bottom .element h2 {
   font-size: 3rem;
   font-weight: 300;
 }
+main section.view3 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 1rem;
+}
+main section.view3 .top {
+  width: 100%;
+}
+main section.view3 .top img {
+  width: 100%;
+  border-radius: 10px;
+}
+main section.view3 .bottom {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 2.5rem;
+  font-size: 1rem;
+  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  gap: 5.5rem;
+}
+main section.view3 .bottom .text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main section.view3 .bottom .text h1 {
+  font-weight: 300;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  line-height: 1.2;
+  font-family: chillax, sans-serif;
+}
+main section.view3 .bottom .text p {
+  font-weight: 300;
+  font-size: 1.3rem;
+  opacity: 0.8;
+  color: rgba(244, 242, 237, 0.6);
+  line-height: 160%;
+}
 
 section {
   max-width: 2000px;
@@ -156,5 +198,22 @@ section {
   }
   main section.view2 {
     flex-direction: row;
+  }
+  main section.view3 {
+    flex-direction: row-reverse;
+  }
+  main section.view3 .top, main section.view3 .bottom {
+    width: 50%;
+  }
+  main section.view3 .bottom {
+    justify-content: space-between;
+    padding: 3rem;
+  }
+  main section.view3 .bottom .paragraphs {
+    display: flex;
+    gap: 2rem;
+  }
+  main section.view3 .bottom .paragraphs p {
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=styles.css.map */
