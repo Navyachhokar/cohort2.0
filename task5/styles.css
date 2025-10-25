@@ -10,7 +10,7 @@ html, body {
     width: 100%;
 }
 body{
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color:#cad8d9;
     padding: 30px 0;
 }
 .main{
@@ -71,7 +71,7 @@ h1{
   gap: 10px;
   padding: 20px;
   margin: 20px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgb(165, 190, 194);
   overflow: hidden; 
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4);
   transition: all 0.4s ease;
