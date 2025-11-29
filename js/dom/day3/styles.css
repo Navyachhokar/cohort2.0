@@ -7,8 +7,11 @@
 html, body {
     height: 100%;
     width: 100%;
+    overflow: hidden;
 }
-
+h1{
+    white-space: nowrap;
+}
 main{
     height: 100vh;
     display: flex;
