@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(35, 39, 66);
+    cursor:none;
+}
+#cursor{
+    position:fixed;
+    height: 40px;
+    transform: translate(-50%,-50%);
+}
