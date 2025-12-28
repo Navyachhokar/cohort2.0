@@ -2,22 +2,91 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
 }
 
 html, body {
     height: 100%;
     width: 100%;
-    background-color: black;
 }
 
-#main{
-    height: 100%;
-    width: 100%;
-    background-color: rgb(35, 39, 66);
-    cursor:none;
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:rgb(112, 112, 111);
+    background-color: black;
 }
-#cursor{
-    position:fixed;
-    height: 40px;
-    transform: translate(-50%,-50%);
+h1{
+    margin-bottom: 50px;
+    font-size: 40px;
+    color:rgb(184, 141, 99);
+}
+
+.piano-container {
+    position: relative;
+    width: 80vw;
+    max-width: 700px;
+    height: 300px;
+}
+
+.white-key-container {
+    display: flex;
+    height: 100%;
+}
+
+.white-key {
+    flex: 1;
+    background: white;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    z-index: 0;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.black-key-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+}
+
+.black-key {
+    position: absolute;
+    width: calc(100% / 7 * 0.6);
+    height: 100%;
+    background: black;
+    border-radius: 0 0 4px 4px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 1;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.black-key:nth-child(1) { left: 12.5%; } 
+.black-key:nth-child(2) { left: 26.5%; } 
+.black-key:nth-child(3) { left: 52.5%; } 
+.black-key:nth-child(4) { left: 66.5%; } 
+.black-key:nth-child(5) { left: 80.5%; } 
+
+.white-key.active{
+    background-color:#eceaea;
+    box-shadow: 0 0 10px #918f7c;
+}
+.black-key.active{
+    background-color:#262626;
+    box-shadow: 0 0 10px #918f7c;
 }
