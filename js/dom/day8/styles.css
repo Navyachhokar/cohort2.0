@@ -43,7 +43,6 @@ section{
 .reel{
     height: 100%;
     width:100%;
-    background-color: lightseagreen;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
@@ -88,10 +87,10 @@ section{
 
 .story-ring{
     padding: 1px;
-    border: 1.5px solid transparent;
+    border: 2px solid transparent;
     background:
         linear-gradient(#000, #000) padding-box,
-        linear-gradient(to right, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5) border-box;
+        linear-gradient(to right, #feda75, #fa7e1e, #d62976, #962fbf) border-box;
 
 }
 
@@ -123,7 +122,6 @@ span{
 }
 
 .right{
-    width: 50px;
     height: 100%;
     position: absolute;
     right: 0;
@@ -132,13 +130,19 @@ span{
     flex-direction: column;
     align-items: center;
     justify-content:end;
-    padding: 20px;
-    gap: 20px;
+    gap: 3px;
     background: linear-gradient(to right, transparent, rgba(0,0,0,0.28));
 }
-.right h4{
+.right > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height:50px;
     cursor: pointer;
 }
+
 .right h4 i{
     font-weight: 50;
     width: 20px;
@@ -147,10 +151,39 @@ span{
 }
 h6{
     font-size: 10px;
-    cursor: pointer;
     text-align: center;
 }
 
 .like .ri-heart-fill{
-    color:#d62976;
+    color:#d82350;
+}
+
+.save .ri-bookmark-fill{
+    color: white;
+}
+.right > div h4{
+    pointer-events: none;
+}
+.right > div h6{
+    pointer-events: none;
+}
+
+.right .mute{
+    background-color: rgb(51, 51, 51, 0.5);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    top: 7%;
+    cursor: pointer;
+}
+
+.mute i{
+    pointer-events: none;
+}
+.mute:active{
+    scale: 0.95;
 }
