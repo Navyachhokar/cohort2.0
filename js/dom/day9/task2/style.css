@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    font-family: monospace;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    color: rgb(4, 187, 4);
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
