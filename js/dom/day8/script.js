@@ -4,7 +4,7 @@ const reelsData = [
     likeCount: 2300,
     isLiked: false,
     commentCount: 2300,
-    caption: "End of summer ☀️🍉 bc fall is right around the corner...",
+    caption: "End of summer ☀️🍉 bc fall is right around the corner",
     video: "./reels/reel1.mp4",
     userProfile: "https://images.unsplash.com/photo-1766693931664-4d5db815f0c5?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MXx8fGVufDB8fHx8fA%3D%3D",
     shareCount: 1600,
