@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-color: black;
+    color: yellow;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+button{
+    width: 100px;
+    padding: 10px 8px;
+    margin: 50px auto;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+}
+h1{
+    color: white;
+    text-align: center;
+}
+
+#output{
+    white-space: pre-wrap;
+    border: 1px solid white;
+    padding: 20px;
+    text-align: center;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: tomato;
+    color: white;
+}
