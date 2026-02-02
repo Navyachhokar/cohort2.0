@@ -1,0 +1,118 @@
+:root {
+  --primary-color: #ffdab3;
+  --secondary-color: #c8aaaa;
+  --tertiary1-color: #574964;
+  --tertiary2-color: rgba(159, 131, 131);
+}
+
+@font-face {
+  font-family: light;
+  src: url(./fonts/aeonikLight.otf);
+}
+@font-face {
+  font-family: normal;
+  src: url(./fonts/aeonikRegular.otf);
+}
+@font-face {
+  font-family: bold;
+  src: url(./fonts/aeonikBold.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  color: white;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--tertiary1-color);
+  overflow-x: hidden;
+}
+
+main {
+  min-height: 100%;
+  width: 100%;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  height: 10%;
+  z-index: 1;
+  background-color: rgba(159, 131, 131, 0.421);
+}
+
+section.allElems {
+  height: 100%;
+  width: 100%;
+  padding: 100px 0 100px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2rem;
+  position: absolute;
+  overflow-y: auto;
+}
+
+.elems {
+  background-color: var(--primary-color);
+  font-size: 2em;
+  height: 300px;
+  width: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: all ease 0.2s;
+  cursor: pointer;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.elems img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  background-size: cover;
+}
+
+.elems h2 {
+  font-size: 0.8em;
+  font-weight: 500;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
+
+.elems:active {
+  scale: 0.97;
+}
+
+.fullElem {
+  height: 100%;
+  width: 100%;
+  background-color: var(--tertiary1-color);
+  padding: 40px;
+  font-size: 2em;
+  display: none;
+  position: absolute;
+}
+
+.back {
+  position: absolute;
+  right: 5%;
+  background-color: red;
+  border-radius: 10px;
+  padding: 5px 12px;
+  font-size: 22px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.back:active {
+  scale: 0.97;
+}
