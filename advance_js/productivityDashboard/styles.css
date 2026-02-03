@@ -1,8 +1,9 @@
 :root {
-  --primary-color: #ffdab3;
-  --secondary-color: #c8aaaa;
-  --tertiary1-color: #574964;
-  --tertiary2-color: rgba(159, 131, 131);
+  --primary-color: 	#ffffff;
+  --secondary1-color: rgb(3, 3, 3);
+  --secondary2-color:gray;
+  --tertiary1-color: rgb(255, 152, 101);
+  --tertiary2-color: #d8eb4bdb;
 }
 
 @font-face {
@@ -93,10 +94,11 @@ section.allElems {
 
 .fullElem {
   height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1591968743883-decc954ccce8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8eWVsbG93JTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D');
+  background-size: cover;
   width: 100%;
-  background-color: var(--tertiary1-color);
+  background-color: var(--secondary1-color);
   padding: 40px;
-  font-size: 2em;
   display: none;
   position: absolute;
 }
@@ -104,15 +106,164 @@ section.allElems {
 .back {
   position: absolute;
   right: 5%;
-  background-color: red;
+  background-color: var(--tertiary2-color);
   border-radius: 10px;
   padding: 5px 12px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 500;
   border: none;
   cursor: pointer;
+  transition: all ease 0.2s;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .back:active {
   scale: 0.97;
+}
+
+.todo-list-fullpage h2{
+    font-weight: 500;
+    color: var(--secondary1-color);
+    font-size: 45px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.todo-list-fullpage .todo-container{
+    height: 80%;
+    width: 100%;
+    margin-top: 40px;
+    /* background-color: var(--tertiary2-color); */
+    /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2); */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo-list-fullpage .todo-container .addTask{
+    width: 33%;
+    background-image: url("https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2hpdGUlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww");
+    background-size: cover;
+    background-color: var(--primary-color);
+    height: 100%;
+    border-radius: 20px;
+}
+
+.todo-list-fullpage .todo-container .allTask{
+    width: 65%;
+    background-image: url("https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2hpdGUlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww");
+    background-size: cover;
+    background-color: var(--primary-color);
+    height: 100%;
+    border-radius: 20px;
+}
+
+.todo-list-fullpage .todo-container .addTask form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px
+}
+.todo-container .addTask form #task-input{
+    padding: 15px 25px;
+    width: 100%;
+    font-size:  20px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    outline: none;
+    color: var(--secondary1-color);
+    border: none;
+    margin-bottom: 20px;
+}
+.todo-container .addTask form textarea{
+    padding: 15px 25px;
+    width: 100%;
+    max-height: 200px;
+    font-size:  20px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    outline: none;
+    color: var(--secondary1-color);
+    border: none;
+    margin-bottom: 20px;
+}
+
+.todo-container .addTask form button{
+    padding: 15px 25px;
+    width: 100%;
+    font-size:  25px;
+    background-color: var(--tertiary2-color);
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+
+.todo-container .addTask form button:active{
+    scale: 0.97;
+}
+
+.todo-list-fullpage .todo-container .allTask{
+    width: 65%;
+    background-color: var(--primary-color);
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    overflow: auto;
+
+}
+
+.task{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 15px 25px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.task summary{
+    font-size: 22px;
+    color: var(--secondary1-color);
+    font-weight: 500;
+}
+.task p{
+    color: var(--secondary1-color);
+    font-size: 15px;
+}
+.task button{
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--tertiary2-color);
+    font-size: 15px;
+    border-radius: 5px;
+}
+.task button:active {
+  scale: 0.97;
+}
+.mark-imp{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+.mark-imp input{
+    scale: 1.7;
+}
+
+input[type="checkbox"]{
+    accent-color: var(--tertiary1-color);
+}
+.mark-imp label{
+    font-size: 20px;
+    color: var(--secondary1-color);
 }
