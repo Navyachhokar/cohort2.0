@@ -77,3 +77,30 @@ function todoList(){
     })
 }
 todoList();
+function dailyPlanner(){
+    var hours = Array.from({length:18},function(_,idx){
+    return `${String((6+idx) % 24).padStart(2, '0')}:00 - ${String((7+idx) % 24).padStart(2, '0')}:00`;
+    })
+    var dayPlanData = JSON.parse(localStorage.getItem('dayPlanData'))||{};
+    
+    var dayPlanner = document.querySelector('.day-planner');
+    
+    var wholeDaySum = ''
+    hours.forEach(function(elem,idx){
+        var savedData = dayPlanData[idx] || ''
+        wholeDaySum += `<div class="day-planner-time">
+                        <p>${elem}</p>
+                        <input id="${idx}"type="text" placeholder="..." value=${savedData}>
+                    </div>`;
+    })
+    dayPlanner.innerHTML = wholeDaySum;
+    var dayPlannerInput = document.querySelectorAll('.day-planner input');
+    
+    dayPlannerInput.forEach(function(elem){
+        elem.addEventListener('input',function(){
+            dayPlanData[elem.id] = elem.value;
+            localStorage.setItem('dayPlanData',JSON.stringify(dayPlanData));
+        })
+    })
+}
+dailyPlanner();
