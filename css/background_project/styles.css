@@ -1,0 +1,95 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body,html{
+    height:100%;
+    width:100%;
+}
+
+body{
+    background-image: url(sceneryimage.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 50px;
+    margin-top: 30px;
+}
+
+h1 {
+    color: aliceblue;
+    font-size: 3rem;
+    text-align: center;
+    margin: 20px;
+    font-family: 'Orbitron', sans-serif;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid white; /* typing cursor */
+    width: 0; /* start hidden */
+    animation: typing 4s steps(30, end) forwards, blink .7s step-end infinite;
+}
+
+button {
+    border: none;
+    padding: 12px 28px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    color: #fff;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 15px rgba(106, 17, 203, 0.6), 
+                0 0 30px rgba(37, 117, 252, 0.4);
+}
+
+
+p {
+    font-family: 'Poppins', sans-serif;
+    color: #cccccc;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+    animation-delay: 4s; /* starts after heading typing finishes */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* p {
+    font-family: 'poppins', sans-serif;
+    overflow: hidden;
+    white-space: nowrap;
+    color:#cccccc;
+    border-right: 3px solid white;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+    animation: typing 3s steps(30, end) forwards, blink .7s step-end infinite;
+} */
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 500px }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
