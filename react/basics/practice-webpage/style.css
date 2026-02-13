@@ -15,6 +15,103 @@ html, body {
     height: 100%;
     width: 100%;
     display: flex;
+    position: relative;
+    background-color: #F2F1F2;
+}
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero {
+    flex-grow: 1; 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 0 15% ;
+    width:100%;
+    height:calc(100vh - 10%);
+}
+.hero-portrait {
+    position: absolute;
+    bottom: 0;
+    right:0;
+    height: 110%; 
+    width: auto;
+    z-index: 1;
+    object-fit: contain;
+
+}
+.hero-content {
+    z-index: 2; 
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: auto;
+    background-color: #F2F1F2;
+    justify-content: space-around;
+}
+.subtitle{
+    font-size: 18px;  
+}
+.stats{
+    display: flex;
+    width:100%;
+    gap:50px;
+    justify-content: left;
+    padding: 0 5px;
+    
+}
+.stats h2{
+    font-size: 40px;
+    font-weight: 300;
+}
+.stats p{
+    font-size: 12px;
+    font-weight: 300;
+    color: #727272;
+    padding: 0 25px;
+}
+.main-title {
+    font-size: clamp(80px, 15vw, 180px); 
+    font-weight: 300;
+    line-height: 0.9;
+}
+
+.scroll{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+.side-bar {
+    position: absolute;
+    left: 40px; 
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    z-index: 10;
+}
+
+.side-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg); 
+    font-size: 12px;
+    color: #a0a0a0;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+.side-line {
+    width: 1px;
+    height: 250px; 
+    background-color: #e0e0e0;
 }
 nav{
     display: flex;
@@ -23,6 +120,7 @@ nav{
     padding: 50px 50px 20px 10px;
     height: 10%;
     width: 100%;
+    z-index: 3;
 }
 nav img{
     height: 150px;
@@ -35,12 +133,12 @@ nav img{
     align-items: center;
 }
 .nav-left-links{
-    gap: 20px;
+    gap: 30px;
 }
 .nav-left-links a {
     text-decoration: none;
     color: #303030;
-    font-size: 18px;
+    font-size: 16px;
 }
 .nav-right-links{
     gap: 5px;
