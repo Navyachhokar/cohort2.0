@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "image":
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
+    "title": "React Portfolio Website",
+    "description":
+      "A personal portfolio website built using React and modern CSS, showcasing projects and skills.",
+    "tags": ["react", "css", "portfolio"],
+    "repoLink": "https://github.com/creativetimofficial/material-kit-react",
+    "demoLink": "https://demos.creative-tim.com/material-kit-react/#/"
+  },
+  {
+    "id": 2,
+    "image":
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+    "title": "Task Management App",
+    "description":
+      "A task management application with CRUD features, built using React and local storage.",
+    "tags": ["react", "javascript", "productivity"],
+    "repoLink": "https://github.com/johannesjo/super-productivity",
+    "demoLink": "https://super-productivity.com/"
+  },
+  {
+    "id": 3,
+    "image":
+      "https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=800&q=80",
+    "title": "Developer Documentation Site",
+    "description":
+      "A clean and responsive documentation website inspired by GitHub Docs.",
+    "tags": ["documentation", "html", "css"],
+    "repoLink": "https://github.com/facebook/docusaurus",
+    "demoLink": "https://docusaurus.io/"
+  },
+  {
+    "id": 4,
+    "image":
+      "https://images.unsplash.com/photo-1504805572947-34fad45aed93?auto=format&fit=crop&w=800&q=80",
+    "title": "Open Source UI Library",
+    "description":
+      "A reusable UI component library for building consistent React applications.",
+    "tags": ["react", "ui", "open-source"],
+    "repoLink": "https://github.com/mui/material-ui",
+    "demoLink": null
+  },
+  {
+    "id": 5,
+    "image":
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+    "title": "Code Editor in the Browser",
+    "description":
+      "A browser-based code editor with syntax highlighting and live preview.",
+    "tags": ["javascript", "editor", "web"],
+    "repoLink": "https://github.com/coder/code-server",
+    "demoLink": "https://coder.com/"
+  }
+]
+
+
