@@ -17,5 +17,13 @@ main{
     background-image: url(/wallpaper.avif);
     background-size: cover;
     background-position: center;
+    overflow: hidden;
+    position: relative;
+
+    *:active{
+        z-index: 10;
+    }
 }
+
+
 
