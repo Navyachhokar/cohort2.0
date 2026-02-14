@@ -12,7 +12,9 @@
   "dependencies": {
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
     "react-rnd": "^10.5.2",
+    "react-syntax-highlighter": "^16.1.0",
     "sass": "^1.97.3"
   },
   "devDependencies": {

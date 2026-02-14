@@ -4,6 +4,7 @@ import Dock from './components/Dock'
 import Nav from './components/Nav';
 import MackWindow from './components/windows/MacWindow';
 import Github from './components/windows/Github';
+import Note from './components/windows/Note';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Nav></Nav>
       <Dock/>
       <Github/>
+      <Note/>
     </main>
   )
 }
