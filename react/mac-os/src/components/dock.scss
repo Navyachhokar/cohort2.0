@@ -6,19 +6,18 @@
     left: 50%;
     transform:translateX(-50%);
     background-color: rgba(63, 63, 63, 0.395);
-    padding-inline: 1rem;
-    padding-block: 0.75rem;
+    padding-inline: 0.75rem;
+    padding-block: 0.7rem;
     border-radius: 0.75rem;
     backdrop-filter: blur(5px);
 
     .icon{
-        padding: 0.65rem;
         border-radius: 0.5rem;
         display: flex;
+        width: 3.75rem;
         justify-content: center;
         align-items: center;
         aspect-ratio: 1/1;
-        width: 3.7rem;
         transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
     }
 
