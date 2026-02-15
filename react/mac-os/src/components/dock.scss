@@ -10,6 +10,7 @@
     padding-block: 0.7rem;
     border-radius: 0.75rem;
     backdrop-filter: blur(5px);
+    // flex-wrap: wrap;
 
     .icon{
         padding: 0.5rem;
@@ -50,5 +51,55 @@
     .icon:hover + .icon,
     .icon:has(+ .icon:hover){
         transform: scale(1.1) translateY(-10%);
+    }
+}
+
+@media (min-width: 2560px){
+    .dock{
+        padding-inline: 1rem;
+        padding-block: 1rem; 
+        gap: 1rem;
+        bottom: 2rem;
+
+        .icon{
+            width: 7rem;
+        }
+    }
+}
+
+@media (max-width:500px) {
+    .dock{
+        gap: 0.7rem;
+        padding-inline: 0.5rem;
+        padding-block: 0.5rem;
+        bottom: 0.75rem;
+        max-width: 90vw;
+        overflow-x: auto;
+
+        .icon{
+            width: 2.75rem;
+            padding-inline: 0.35rem;
+            padding-block: 0.2rem;
+            font-size: 0.8rem;
+        }
+
+        .icon:hover{
+            transform: scale(1.15) translateY(-15%);
+        }
+        .icon:hover + .icon,
+        .icon:has(+ .icon:hover){
+            transform: scale(1.05) translateY(-7%);
+        }
+    }
+}
+
+@media (max-width:350px) {
+    .dock{
+        gap:0.75rem;
+
+        .icon{
+            width: 2.75rem;
+            padding-block: 0.2rem;
+        }
     }
 }

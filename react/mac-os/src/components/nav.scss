@@ -17,3 +17,48 @@
         gap: 0.75rem;
     }
 }
+
+@media (min-width: 2560px) {
+    .nav {
+        font-size: 2rem;
+        .left{
+            gap: 2rem;
+            .apple-icon{
+                img{
+                   height: 100%;
+                }
+            }
+        }
+        .right{
+            flex-wrap: wrap;
+            gap: 3rem;
+            .nav-icon{
+                img{
+                    height: 100%;
+                }
+            }
+        }
+    }
+    
+}
+@media (max-width: 500px) {
+    .nav {
+        font-size: 0.7rem;
+    }
+    
+}
+@media (max-width: 400px) {
+    .nav {
+        p{
+            display: none;
+        }
+        .right{
+            .nav-item{
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+        }
+    }
+    
+}
