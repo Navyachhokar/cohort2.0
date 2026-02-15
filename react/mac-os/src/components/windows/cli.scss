@@ -2,6 +2,7 @@
     height: 100%;
     width:100%;
     padding-bottom: 3rem;
+    overflow: auto;
     background-color: rgb(33,33,33);
     cursor: text;
 
@@ -13,4 +14,16 @@
         display: none;
     }
 
+}
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s steps(2, start) infinite;
+  color: #79d2b2;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
 }

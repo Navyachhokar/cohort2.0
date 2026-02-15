@@ -1,85 +1,98 @@
 /**
  * @file: profile.config.ts
- * @author: Engineering Portfolio
- * @summary: A high-performance full-stack engineer.
+ * @author: Navya Chhokar
+ * @summary: Information Technology undergraduate focused on building interactive
+ *           and modern web interfaces while exploring new technologies.
  */
 
 // --------------------------------------------------
-// 1. CORE DEPENDENCIES & SKILLS
+// 1. CORE SKILLS & TECH STACK
 // --------------------------------------------------
 
 const TECH_STACK = {
   frontend: [
-    "React.js",    // 100%
-    "Next.js",     // 95%
-    "TailwindCSS", // 90%
-    "Three.js",    // 70%
+    "HTML5",
+    "CSS3 / SCSS/ TailwindCSS/ BootStrap",
+    "JavaScript (ES6+)",
+    "React.js",
   ],
   backend: [
-    "Node.js",     // 90%
-    "PostgreSQL",  // 85%
-    "Redis",       // 75%
-    "Docker",      // 80%
+    "Node.js (Basics)",
   ],
-  tools: ["AWS", "Git", "Figma", "Linux"]
+  tools: [
+    "Git & GitHub",
+    "VS Code",
+    "npm",
+    "Figma (Basics)",
+  ],
+  currentlyLearning: [
+    "Advanced React Patterns",
+    "SASS Architecture",
+    "Responsive UI Systems",
+  ],
 };
 
 // --------------------------------------------------
-// 2. EXPERIENCE LOG (Reverse Chronological)
+// 2. PROJECT EXPERIENCE (Learning-Focused)
 // --------------------------------------------------
 
-class ProfessionalHistory {
-  
-  /** * CURRENT ROLE
-   * @period 2023 - Present 
+class ProjectExperience {
+
+  /**
+   * @project macOS Portfolio
+   * @period 2025 - Present
    */
-  public async TechFlow_Systems(): Promise<Impact> {
-    const role = "Senior Full-Stack Engineer";
-    
-    // Key Achievements
-    const optimized = await api.optimize({ strategy: "Redis Caching" });
-    const latencyReduction = "40%";
-    
-    const leadership = this.mentor(["Jr. Dev 1", "Jr. Dev 2", "Jr. Dev 3"]);
-    const architecture = "Monolith -> Microservices Migration";
-    
-    return { role, optimized, architecture, leadership };
+  public async macOS_Portfolio(): Promise<ProjectImpact> {
+    const role = "Frontend Developer";
+
+    const highlights = [
+      "Built a macOS-inspired portfolio UI using React",
+      "Implemented draggable & resizable windows using react-rnd",
+      "Designed a terminal interface with custom commands",
+      "Managed window focus, z-index, and dock interactions",
+      "Focused on clean folder structure and Git discipline",
+    ];
+
+    const tech = ["React", "SCSS", "JavaScript", "Git"];
+
+    return { role, highlights, tech };
   }
 
-  /** * PREVIOUS ROLE
-   * @period 2021 - 2023
+  /**
+   * @project Web Practice Tasks
+   * @period 2024 - 2025
    */
-  public PixelPerfect_Studios(): void {
-    this.role = "Frontend Developer";
-    this.focus = "High-Fidelity Animations";
-    
-    // Implemented GSAP scroll-triggers for 15+ clients
-    // Improved Lighthouse Performance Scores: 65 -> 98
+  public webPractice(): void {
+    this.focus = "Core Web Fundamentals";
+
+    // Built multiple CSS & layout-based projects
+    // Practiced Flexbox, positioning, responsiveness
+    // Structured projects cleanly inside GitHub repository
   }
 }
 
 // --------------------------------------------------
-// 3. COMPETITIVE ACHIEVEMENTS
+// 3. COMPETITIVE & PRACTICE WORK
 // --------------------------------------------------
 
-interface HackathonWin {
-  rank: number;
-  event: string;
-  project: string;
+interface PracticeWork {
+  area: string;
+  description: string;
 }
 
-const trophyCabinet: HackathonWin[] = [
+const learningHighlights: PracticeWork[] = [
   {
-    rank: 1,
-    event: "Global AI Hackathon 2024",
-    project: "EcoVision (Computer Vision Waste Segregation)",
-    // Prize: $5,000
+    area: "Frontend Development",
+    description: "Hands-on practice with layouts, components, and UI logic",
   },
   {
-    rank: 500, // Top 500 Global
-    event: "Google Code Jam 2023",
-    project: "Algorithm Optimization (Dynamic Programming)",
-  }
+    area: "React Fundamentals",
+    description: "Components, props, state, hooks, and project structuring",
+  },
+  {
+    area: "Version Control",
+    description: "Daily Git usage: commits, folder refactors, clean history",
+  },
 ];
 
 // --------------------------------------------------
@@ -87,19 +100,24 @@ const trophyCabinet: HackathonWin[] = [
 // --------------------------------------------------
 
 const education = new Map<string, string>([
-  ["Stanford University", "MS Computer Science (3.9 GPA)"],
-  ["MIT World Peace Univ", "B.Tech Information Tech (8.8 CGPA)"]
+  [
+    "Bachelor of Technology",
+    "Information Technology (4th Year Undergraduate)",
+  ],
 ]);
 
-export default new ProfessionalHistory();
+// --------------------------------------------------
+// 5. CURRENT STATUS
+// --------------------------------------------------
 
+const availability = {
+  status: "Open to Internships & Entry-Level Roles",
+  interests: [
+    "Frontend Development",
+    "UI Engineering",
+    "React-based Applications",
+  ],
+  learningMindset: true,
+};
 
-```bash
-# TERMINAL OUTPUT
-# ---------------------------------------
-$ user --status
-> Status: Open to Opportunities
-> Location: Global / Remote
-> Loading Assets... [||||||||||] 100%
-> Ready.
-```
+export default new ProjectExperience();

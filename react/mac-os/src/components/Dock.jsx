@@ -7,7 +7,8 @@ const Dock = ({ setWindowsState }) => {
             <div
                 onClick={() => { setWindowsState(state => ({ ...state, github: true })) }}
                 className="icon github">
-                <img src="/dock-icons/github.svg" alt="" /></div>
+                <img src="/dock-icons/github.svg" alt="" />
+                </div>
             <div
                 onClick={() => { setWindowsState(state => ({ ...state, note: true })) }}
                 className="icon note">
@@ -21,10 +22,6 @@ const Dock = ({ setWindowsState }) => {
                 className="icon calendar">
                 <img src="/dock-icons/calendar.svg" alt="" /></div>
             <div
-                onClick={() => { setWindowsState(state => ({ ...state, spotify: true })) }}
-                className="icon spotify">
-                <img src="/dock-icons/spotify.svg" alt="" /></div>
-            <div
                 onClick={()=>{window.open("mailto:chhokarnavya@gmail.com","_blank")}}
                 className="icon mail">
                 <img src="/dock-icons/mail.svg" alt="" /></div>
@@ -36,6 +33,10 @@ const Dock = ({ setWindowsState }) => {
                 onClick={() => { setWindowsState(state => ({ ...state, cli: true })) }}
                 className="icon cli">
                 <img src="/dock-icons/cli.svg" alt="" /></div>
+            <div
+                onClick={() => { setWindowsState(state => ({ ...state, spotify: true })) }}
+                className="icon spotify">
+                <img src="/dock-icons/spotify.svg" alt="" /></div>
         </footer>
     )
 }

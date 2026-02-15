@@ -20,19 +20,31 @@ function App() {
     cli: false,
   })
 
+  const handleWindowStateChange = (updater) => {
+    const newState = typeof updater === 'function' ? updater(windowsState) : updater;
+    
+    for (const key in newState) {
+      if (newState[key] && !windowsState[key]) {
+        setActiveWindow(key);
+        break;
+      }
+    }
+    setWindowsState(newState);
+  };
+
   return (
      <main>
       <Nav />
-      <Dock windowsState={windowsState} setWindowsState={setWindowsState} />
-      { windowsState.github && <Github windowName="github" setWindowsState={setWindowsState} activeWindow={activeWindow}
+      <Dock windowsState={windowsState} setWindowsState={handleWindowStateChange} />
+      { windowsState.github && <Github windowName="github" setWindowsState={handleWindowStateChange} activeWindow={activeWindow}
     setActiveWindow={setActiveWindow}/>}
-      { windowsState.note && <Note windowName="note" setWindowsState={setWindowsState} activeWindow={activeWindow}
+      { windowsState.note && <Note windowName="note" setWindowsState={handleWindowStateChange} activeWindow={activeWindow}
     setActiveWindow={setActiveWindow}/>}
-      { windowsState.resume && <Resume windowName="resume" setWindowsState={setWindowsState} activeWindow={activeWindow}
+      { windowsState.resume && <Resume windowName="resume" setWindowsState={handleWindowStateChange} activeWindow={activeWindow}
     setActiveWindow={setActiveWindow}/>}
-      { windowsState.spotify && <Spotify windowName="spotify" setWindowsState={setWindowsState} activeWindow={activeWindow}
+      { windowsState.spotify && <Spotify windowName="spotify" setWindowsState={handleWindowStateChange} activeWindow={activeWindow}
     setActiveWindow={setActiveWindow}/>}
-      { windowsState.cli && <Cli windowName="cli" setWindowsState={setWindowsState} activeWindow={activeWindow}
+      { windowsState.cli && <Cli windowName="cli" setWindowsState={handleWindowStateChange} activeWindow={activeWindow}
     setActiveWindow={setActiveWindow}/>}
     </main>
   )

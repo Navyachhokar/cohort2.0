@@ -7,20 +7,20 @@ const DateTime = () => {
     const updateDateTime = () => {
       const now = new Date();
 
-      const dayNames = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+      const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
       const monthNames = [
-        "jan",
-        "feb",
-        "mar",
-        "apr",
-        "may",
-        "jun",
-        "jul",
-        "aug",
-        "sep",
-        "oct",
-        "nov",
-        "dec",
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
       ];
 
       const day = dayNames[now.getDay()];
