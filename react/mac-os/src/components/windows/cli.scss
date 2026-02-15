@@ -1,0 +1,16 @@
+.cli-window{
+    height: 100%;
+    width:100%;
+    padding-bottom: 3rem;
+    background-color: rgb(33,33,33);
+    cursor: text;
+
+    div[name="react-console-emulator"]{
+        background-color: transparent !important;
+        height: 100%;
+    }
+    div[name="react-console-emulator"]::-webkit-scrollbar{
+        display: none;
+    }
+
+}

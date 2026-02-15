@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "react": "^19.2.0",
+    "react-console-emulator": "^5.0.2",
     "react-dom": "^19.2.0",
     "react-markdown": "^10.1.0",
     "react-rnd": "^10.5.2",
