@@ -2,7 +2,7 @@ import React from 'react'
 import { Rnd } from 'react-rnd';
 import "./window.scss";
 
-const MacWindow = ({children, width="50vw", height="50vh", windowName, setWindowsState,activeWindow, setActiveWindow}) => {
+const MacWindow = ({children, width="30vw", height="50vh", windowName, setWindowsState,activeWindow, setActiveWindow}) => {
   return (
     <Rnd
     default={{
