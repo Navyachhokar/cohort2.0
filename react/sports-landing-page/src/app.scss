@@ -15,6 +15,9 @@ main{
     height: 100%;
     width: 100%;
     display: flex;
+    max-width: 1024px;
+    margin-inline: auto;
+    justify-content: center;
     flex-direction: column;
     color: rgb(0, 0, 0);
     padding: 1.5rem;
