@@ -1,0 +1,174 @@
+.about-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    gap:2rem;
+
+    .about-navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        
+        button{
+            align-self: start;
+            padding-block: 0.5rem;
+            padding-inline: 0.75rem;
+            border-radius: 1rem;
+            border: 0.75px solid #989899;
+            background-color: rgb(242, 241, 241);
+            color:#000000;
+            font-size: 0.8rem;
+        }
+        .para{
+            width: 50%;
+            height: 100%;
+            p{
+                color:#0f1b2d;
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+        }
+        
+    }
+
+    .info-section{
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        gap: 1rem;
+        font-weight: 200;
+        .info-box1,.info-box2,.info-box3{
+            flex:1;
+            border-radius: 1rem;
+            padding:1rem;
+            flex-direction: column;
+        }
+        .info-box1{
+            color: white;
+            background-color: #0f1b2d;
+            display: flex;
+            gap: 1rem;
+            .logo{
+                font-size: 2rem;
+            }
+            h3{
+                word-spacing: 0.5rem;
+                word-wrap: wrap;
+                font-weight: 200;
+                font-size: 1.2rem;
+                span{
+                    padding-inline: 0.4rem;
+                    color: rgb(156, 156, 156);
+                }
+            }
+            .bottom-section{
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                i{
+                    font-size: 1.7rem;
+                }
+                p{
+                    font-size: 0.9rem;
+                    color: rgb(156, 156, 156);
+                }
+            }
+
+        }
+        .info-box2{
+            background-image: url("https://images.unsplash.com/photo-1660463529618-ca82c1c06a66?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRlbm5pc3MlMjBsZXNzb25zfGVufDB8fDB8fHww");
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .box-text{
+                color: white;
+                font-weight: 600;
+                background: rgba(255, 255, 255, 0.1); 
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                padding: 0.75rem;
+                border-radius: 2rem;
+                font-weight: 300;
+            }
+        }
+
+        .info-box3{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 0;
+            .box-info-top{
+                text-align: left;
+                flex-direction: column;
+                display: flex;
+                gap: 0.5rem;
+                h2{
+                    font-size: 3rem;
+                    font-weight: 400;
+                }
+                h4{
+                    color:rgb(77, 77, 77);
+                }
+                p{
+                    font-size: 0.65rem;
+                    color: gray;
+                }
+            }
+
+            .box-info-bottom{
+                display: flex;
+                flex-direction: column;
+                .section1,.section2,.section3{
+                    display: flex;
+                    align-items: baseline;
+                    justify-content: center;
+                    font-size: 0.75rem;
+                    .counts-box{
+                        width: 100%;
+                        align-items: center;
+                        display: flex;
+                        padding: 0.5rem;
+
+                        i{
+                            font-size: 1rem;
+                            color: rgb(0, 153, 255);
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+
+    .more-info{
+        h2{
+            text-align: center;
+            font-weight: 400;
+            font-size: 1.3rem;
+        } 
+    }
+    .stats-box{
+        display: flex;
+        justify-content: space-between;
+        .stats-box1,.stats-box2,.stats-box3,.stats-box4{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .stat-count{
+                font-size: 2rem;
+                font-weight: 500;
+            }
+            p{
+                color:#989899;
+                font-size: 0.8rem;
+            }
+
+        }
+    }
+}
