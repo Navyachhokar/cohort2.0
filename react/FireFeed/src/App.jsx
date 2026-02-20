@@ -51,21 +51,23 @@ export const stories = [
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#1C1B22] p-8">
-      <h2 className="text-white text-xl font-bold mb-6">
-        Thought-provoking stories
-      </h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        {stories.map((story) => (
-          <StoryCard
-            key={story.id}
-            title={story.title}
-            image={story.image}
-            source={story.source}
-            icon={story.sourceIcon}
-          />
-        ))}
+    <div className="min-h-screen flex justify-center bg-[#1C1B22] p-8">
+      <div className="max-w-5xl max-auto">
+        <h2 className="text-white text-xl font-bold mb-6">
+          Thought-provoking stories
+        </h2>
+  
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {stories.map((story) => (
+            <StoryCard
+              key={story.id}
+              title={story.title}
+              image={story.image}
+              source={story.source}
+              icon={story.sourceIcon}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
