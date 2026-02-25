@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Card from './components/Card.jsx'
 import './App.css'
 
 const App = () => {
@@ -26,7 +27,7 @@ const App = () => {
   }
 
   return (
-    <div className="h-screen bg-black text-white">
+    <div className="h-[100vh] w-[100vw] bg-black text-white">
       <form
         onSubmit={(e) => {
           submitHanlder(e);
