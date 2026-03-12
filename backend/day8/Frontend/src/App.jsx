@@ -9,7 +9,7 @@ function App() {
   const [editDesc, setEditedDesc] = useState("")
   const [edit, setEdit] = useState("");
   function fetchNotes(){
-    axios.get("http://localhost:3000/api/notes").then((res) => {
+    axios.get("https://cohort2-0-frsh.onrender.com/api/notes").then((res) => {
       setNotes(res.data.notes);
     });
   }
@@ -23,7 +23,7 @@ function App() {
 
     if(edit === ""){
       axios
-        .post("http://localhost:3000/api/notes", {
+        .post("https://cohort2-0-frsh.onrender.com/api/notes", {
           title: editTitle,
           description: editDesc,
         })
@@ -35,7 +35,7 @@ function App() {
         });
     }
     else{
-      axios.patch("http://localhost:3000/api/notes/"+edit,{
+      axios.patch("https://cohort2-0-frsh.onrender.com/api/notes/"+edit,{
         title: editTitle,
         description: editDesc
       })
@@ -51,7 +51,7 @@ function App() {
   }
 
   function handleDelete(noteId){
-    axios.delete("http://localhost:3000/api/notes/"+noteId)
+    axios.delete("https://cohort2-0-frsh.onrender.com/api/notes/"+noteId)
     .then(res=>{
       console.log(res.data)
       fetchNotes()
