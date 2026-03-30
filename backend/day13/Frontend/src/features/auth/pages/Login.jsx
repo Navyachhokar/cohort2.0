@@ -30,7 +30,7 @@ const Login = () => {
     <main>
       <div className="form-container">
         <h1>Login</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} method='POST'>
           <input
             onInput={(e) => {
               setUsername(e.target.value);
