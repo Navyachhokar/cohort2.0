@@ -1,20 +1,18 @@
-import {createBrowserRouter} from 'react-router-dom';
-import Login from './features/auth/pages/Login'
-import Register from './features/auth/pages/Register'
-import './features/auth/style/form.scss'
+import {createBrowserRouter} from 'react-router';
+import Login from './features/auth/pages/Login';
+import Register from './features/auth/pages/Register';
 
-
-export const routes = createBrowserRouter([
+export const router = createBrowserRouter([
     {
-        path: '/login',
-        element: (<Login />)
+        path: "/login",
+        element: <Login/>
     },
     {
-        path: '/register',
-        element: (<Register />)
+        path: "/register",
+        element: <Register/>
     },
     {
-        path: '/',
-        element: (<h1>Welcome to the page</h1>)
+        path: "/",
+        element: <h1>Welcome to four layer architecture of react</h1>
     }
 ])
