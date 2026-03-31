@@ -1,0 +1,128 @@
+.feed-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    .feed {
+        max-width: 400px;
+        width: 100%;
+
+        .posts{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+            gap: 1rem;
+        }
+
+        .post{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            background-color: #151515;
+            border: 1px solid rgb(44, 43, 43);
+            // padding-inline: 0.75rem;
+            padding-block: 0.5rem;
+
+            .user{
+                display: flex;
+                gap: 0.5rem;
+                padding-inline: 0.5rem;
+                align-items: center;
+                justify-content: space-between;
+                
+                .left{
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+
+                    .img-wrapper{
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border: 2px solid rgba(255, 0, 0, 0);
+                        background: linear-gradient(
+                            45deg,
+                            #feda75, /* Light yellow */
+                            #fa7e1e, /* Orange */
+                            #d62976, /* Pink */
+                            #962fbf, /* Purple */
+                            #4f5bd5  /* Blue */
+                          ) border-box;
+                    }
+                    img{
+                        width: 2rem;
+                        aspect-ratio: 1/1;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                }
+
+                .right{
+                    svg{
+                        width: 1.2rem;
+                        aspect-ratio: 1/1;
+                        color: white;
+                    }
+                    button{
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
+                    }
+                }
+                
+            }
+            
+
+            .icons{
+                display: flex;
+                padding-inline: 0.5rem;
+                justify-content: space-between;
+
+                .left{
+                    display: flex;
+                    gap: 0.75rem;
+                }
+
+                
+                
+                svg{
+                    width: 1.2rem;
+                    aspect-ratio: 1/1;
+                    color: white;
+                    transition: fill 0.2s ease, stroke 0.2s ease;
+                    cursor: pointer;
+                }
+                  
+                svg:hover {
+                    transform: scale(1.2); 
+                }
+
+                button{
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                }
+            }
+
+            img{
+                width: 100%;
+            }
+
+            .bottom{
+                display: flex;
+                justify-content: space-between;
+                padding-inline: 0.5rem;
+                margin-bottom: 2rem;
+                font-size: 0.75rem;
+
+
+                
+            }
+        }
+    }
+
+
+}
