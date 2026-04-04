@@ -24,6 +24,13 @@ userRouter.post("/follow/:username", identifyUser, userController.followUserCont
 
 userRouter.post("/unfollow/:username", identifyUser, userController.unfollowUserController)
 
+userRouter.get("/sidebar", identifyUser, userController.getSidebarData);
+
+userRouter.get(
+  "/requests",
+  identifyUser,
+  userController.getPendingFollowRequests,
+);
 
 
 module.exports = userRouter

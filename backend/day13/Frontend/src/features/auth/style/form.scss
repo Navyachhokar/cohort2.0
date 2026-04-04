@@ -14,8 +14,10 @@ main{
 
     .form-container{
         @include flex-column(1rem);
-        min-width: 350px;
+        width: min(350px, 100%);
+        max-width: 350px;
         text-align: center;
+        padding-inline: 1rem;
 
         form{
             @include flex-column(1rem);

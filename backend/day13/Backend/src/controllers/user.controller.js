@@ -101,8 +101,75 @@ async function respondToFollowRequestController(req, res) {
   }
 }
 
-module.exports = {
-    followUserController,
-    unfollowUserController,
-    respondToFollowRequestController
+async function getSidebarData(req, res) {
+    try {
+      const currentUserUsername = req.user.username;
+
+      const currentUser = await userModel
+        .findOne({ username: currentUserUsername })
+        .select("username profileImage");
+
+      const followersCount = await followModel.countDocuments({
+        followee: currentUser,
+        status: "accepted",
+      });
+
+      const followingCount = await followModel.countDocuments({
+        follower: currentUser,
+        status: "accepted",
+      });
+
+      const existingInteractions = await followModel.find({
+        follower: currentUser,
+      });
+      const excludedUsernames = existingInteractions.map((f) => f.followee);
+      excludedUsernames.push(currentUser);
+
+      const suggestions = await userModel
+        .find({
+          username: { $nin: excludedUsernames },
+        })
+        .select("username profileImage")
+        .limit(5);
+
+      res.status(200).json({
+        currentUser,
+        stats: {
+          followers: followersCount,
+          following: followingCount,
+        },
+        suggestions,
+      });
+    } catch (error) {
+      res.status(500).json({ message: "Error fetching sidebar data" });
+    }
 }
+
+async function getPendingFollowRequests(req, res) {
+  try {
+    const currentUser = req.user.username;
+
+    const pendingRequests = await followModel
+      .find({
+        followee: currentUser,
+        status: "pending",
+      })
+      .sort({ createdAt: -1 });
+
+    res.status(200).json({
+      count: pendingRequests.length,
+      requests: pendingRequests,
+    });
+  } catch (error) {
+    console.error("Error fetching requests:", error);
+    res.status(500).json({ message: "Error fetching pending requests" });
+  }
+}
+
+module.exports = {
+  followUserController,
+  unfollowUserController,
+  respondToFollowRequestController,
+  getSidebarData,
+  getPendingFollowRequests,
+};

@@ -1,21 +1,144 @@
-import { getFeed } from "../services/post.api";
-import { useContext } from "react";
-import { PostContext } from '../post.context'
+import {
+  getFeed,
+  createPost,
+  likePost,
+  savePost,
+  getSidebarData, 
+  followUser,
+  getPendingRequests,
+  respondToRequest,
+} from "../services/post.api";
+import { useContext, useEffect } from "react";
+import { PostContext } from "../post.context";
 
+export const usePost = () => {
+  const context = useContext(PostContext);
 
-export const usePost = ()=>{
+  const {
+    user,
+    setUser,
+    loading,
+    setLoading,
+    post,
+    setPost,
+    setStats,
+    // suggestions,
+    setSuggestions,
+    feed,
+    setFeed,
+    sidebarData,
+    setSidebarData,
+    pendingRequests,
+    setPendingRequests,
+  } = context;
 
-    const context = useContext(PostContext)
+  const stats = sidebarData.stats;
+  const suggestions = sidebarData.suggestions
 
-    const {loading, setLoading, post, setPost, feed, setFeed} = context
+  const handleGetFeed = async () => {
+    setLoading(true);
+    const data = await getFeed();
+    setFeed(data.posts);
+    setLoading(false);
+  };
 
-    const handleGetFeed = async () => {
-        setLoading(true)
-        const data = await getFeed()
-        setFeed(data.posts)
-        setLoading(false);
+  const handleCreatePost = async (imageFile, caption) => {
+    setLoading(true);
+    const data = await createPost(imageFile, caption);
+    setFeed([data.post, ...feed]);
+    setLoading(false);
+  };
+
+  const handleLike = async (postId) => {
+    const updatedFeed = feed.map((p) =>
+      p._id === postId ? { ...p, isLiked: !p.isLiked } : p,
+    );
+    setFeed(updatedFeed);
+
+    try {
+      await likePost(postId);
+    } catch (error) {
+      handleGetFeed();
     }
+  };
 
-    return { loading, feed, post, handleGetFeed }
+  const handleSave = async (postId) => {
+    const updatedFeed = feed.map((p) =>
+      p._id === postId ? { ...p, isSaved: !p.isSaved } : p,
+    );
+    setFeed(updatedFeed);
 
-}
+    try {
+      await savePost(postId);
+    } catch (error) {
+      handleGetFeed();
+    }
+  };
+
+  const handleGetSidebar = async () => {
+    try{
+      const data = await getSidebarData();
+      setSidebarData({
+        stats: data.stats,
+        suggestions: data.suggestions,
+      });
+    setUser(data.currentUser);
+
+    }catch(error){
+      console.error("Error fetching sidebar", error)
+    }
+    
+  };
+
+  const handleGetRequests = async () => {
+    const data = await getPendingRequests();
+    setPendingRequests(data.requests);
+  };
+
+  const handleFollowUser = async (username) => {
+    try {
+      await followUser(username);
+      await handleGetSidebar();
+    } catch (error) {
+      console.error("Failed to follow user:", error);
+    }
+  };
+
+
+  const handleRespondRequest = async (requestId, action) => {
+    try {
+      await respondToRequest(requestId, action);
+
+      await handleGetRequests();
+      await handleGetSidebar();
+    } catch (error) {
+      console.error("Failed to respond to request:", error);
+    }
+  };
+
+  
+
+  useEffect(() => {
+    handleGetFeed();
+    handleGetSidebar();
+    handleGetRequests();
+  }, []);
+
+  return {
+    stats,
+    suggestions,
+    user,
+    loading,
+    feed,
+    post,
+    handleGetFeed,
+    handleCreatePost,
+    handleLike,
+    handleSave,
+    sidebarData,
+    pendingRequests,
+    handleFollowUser,
+    handleRespondRequest,
+    handleGetSidebar,
+  };
+};;
