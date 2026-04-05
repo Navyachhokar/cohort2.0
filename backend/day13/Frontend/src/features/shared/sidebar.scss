@@ -90,27 +90,30 @@
           padding-inline: 1rem;
           padding-block: 0.75rem;
           border-radius: 0.5rem;
-          gap: 0.7rem;
-          .confirm-btn{
-            background-color: #363636;
-            color: white;
-            border: none;
-            padding-inline: 0.5rem;
-            padding-block: 0.3rem;
-            border-radius: 0.3rem;
-            cursor: pointer;
-            font-weight: 600;
-          }
-          .delete-btn{
-            background-color: rgb(157, 39, 39);
-            padding-inline: 0.5rem;
-            padding-block: 0.3rem;
-            color: rgb(218, 216, 216);
-            border: none;
-            border-radius: 0.3rem;
-            font-weight: 600;
-            cursor: pointer;
-          }
+          .btn-group{
+            display: flex;
+            gap: 1rem;
+            .confirm-btn{
+              background-color: #363636;
+              color: white;
+              border: none;
+              padding-inline: 0.5rem;
+              padding-block: 0.3rem;
+              border-radius: 0.3rem;
+              cursor: pointer;
+              font-weight: 600;
+            }
+            .delete-btn{
+              background-color: rgb(157, 39, 39);
+              padding-inline: 0.5rem;
+              padding-block: 0.3rem;
+              color: rgb(218, 216, 216);
+              border: none;
+              border-radius: 0.3rem;
+              font-weight: 600;
+              cursor: pointer;
+            }
+          }  
         }
       }
 

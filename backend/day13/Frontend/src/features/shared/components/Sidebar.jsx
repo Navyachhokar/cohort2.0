@@ -1,7 +1,13 @@
-import React from 'react'
-import '../sidebar.scss'
+import React from "react";
+import "../sidebar.scss";
 
-const Sidebar = ({ user, sidebarData, pendingRequests, handleFollowUser, handleRespondRequest,stats, suggestions }) => {
+const Sidebar = ({
+  user,
+  sidebarData,
+  pendingRequests,
+  handleFollowUser,
+  handleRespondRequest,
+}) => {
   return (
     <div className="sidebar-container">
       <div className="top">
@@ -45,39 +51,45 @@ const Sidebar = ({ user, sidebarData, pendingRequests, handleFollowUser, handleR
             {pendingRequests.map((req) => (
               <div key={req._id} className="req-item">
                 <span>{req.follower}</span>
-                <button
-                  className="confirm-btn"
-                  onClick={() => handleRespondRequest(req._id, "accepted")}
-                >
-                  Confirm
-                </button>
-                <button
-                  className="delete-btn"
-                  onClick={() => handleRespondRequest(req._id, "rejected")}
-                >
-                  Delete
-                </button>
+                <div className="btn-group">
+                  <button
+                    className="confirm-btn"
+                    onClick={() => handleRespondRequest(req._id, "accepted")}
+                  >
+                    Confirm
+                  </button>
+                  <button
+                    className="delete-btn"
+                    onClick={() => handleRespondRequest(req._id, "rejected")}
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             ))}
           </div>
         )}
         <div className="suggestions">
           <p className="title">Suggested for you</p>
-          {sidebarData.suggestions.map((user) => (
-            <div key={user._id} className="sug-item">
-              <span>{user.username}</span>
-              <button
-                className="follow"
-                onClick={() => handleFollowUser(user.username)}
-              >
-                Follow
-              </button>
-            </div>
-          ))}
+          {sidebarData.suggestions?.length > 0 ? (
+            sidebarData.suggestions.map((sugUser) => (
+              <div key={sugUser._id} className="sug-item">
+                <span>{sugUser.username}</span>
+                <button
+                  className="follow"
+                  onClick={() => handleFollowUser(sugUser.username)}
+                >
+                  Follow
+                </button>
+              </div>
+            ))
+          ) : (
+            <p className="empty-msg">No suggestions</p>
+          )}
         </div>
       </div>
     </div>
   );
 };
 
-export default Sidebar
+export default Sidebar;

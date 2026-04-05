@@ -10,6 +10,8 @@ const Feed = () => {
     user,
     feed,
     handleGetFeed,
+    handleGetSidebar,
+    handleGetRequests,
     loading,
     handleLike,
     handleSave,
@@ -20,7 +22,9 @@ const Feed = () => {
   } = usePost();
 
   useEffect(()=>{
-    handleGetFeed()
+    handleGetFeed();
+    handleGetSidebar();
+    handleGetRequests();
   },[])
 
   if(loading || !feed){

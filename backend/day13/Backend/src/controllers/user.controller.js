@@ -102,47 +102,57 @@ async function respondToFollowRequestController(req, res) {
 }
 
 async function getSidebarData(req, res) {
-    try {
-      const currentUserUsername = req.user.username;
+  try {
+    const currentUserUsername = req.user.username;
 
-      const currentUser = await userModel
-        .findOne({ username: currentUserUsername })
-        .select("username profileImage");
+    // 1. Get the actual user object
+    const currentUser = await userModel.findOne({
+      username: currentUserUsername,
+    });
 
-      const followersCount = await followModel.countDocuments({
-        followee: currentUser,
-        status: "accepted",
-      });
+    // 2. Count Followers/Following correctly using the STRING username
+    // (since your followModel stores strings, not ObjectIds)
+    const followersCount = await followModel.countDocuments({
+      followee: currentUserUsername,
+      status: "accepted",
+    });
 
-      const followingCount = await followModel.countDocuments({
-        follower: currentUser,
-        status: "accepted",
-      });
+    const followingCount = await followModel.countDocuments({
+      follower: currentUserUsername,
+      status: "accepted",
+    });
 
-      const existingInteractions = await followModel.find({
-        follower: currentUser,
-      });
-      const excludedUsernames = existingInteractions.map((f) => f.followee);
-      excludedUsernames.push(currentUser);
+    // 3. Find anyone I have ALREADY interacted with (pending or accepted)
+    const myInteractions = await followModel.find({
+      follower: currentUserUsername,
+    });
 
-      const suggestions = await userModel
-        .find({
-          username: { $nin: excludedUsernames },
-        })
-        .select("username profileImage")
-        .limit(5);
+    // Extract the usernames of people I already followed/requested
+    const alreadyInteractedWith = myInteractions.map((f) => f.followee);
 
-      res.status(200).json({
-        currentUser,
-        stats: {
-          followers: followersCount,
-          following: followingCount,
-        },
-        suggestions,
-      });
-    } catch (error) {
-      res.status(500).json({ message: "Error fetching sidebar data" });
-    }
+    // Add myself to the excluded list
+    alreadyInteractedWith.push(currentUserUsername);
+
+    // 4. Suggestions: People NOT in the excluded list
+    const suggestions = await userModel
+      .find({
+        username: { $nin: alreadyInteractedWith },
+      })
+      .select("username profileImage")
+      .limit(5);
+
+    res.status(200).json({
+      currentUser,
+      stats: {
+        followers: followersCount,
+        following: followingCount,
+      },
+      suggestions,
+    });
+  } catch (error) {
+    console.error("Sidebar Error:", error);
+    res.status(500).json({ message: "Error fetching sidebar data" });
+  }
 }
 
 async function getPendingFollowRequests(req, res) {

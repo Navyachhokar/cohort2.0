@@ -3,7 +3,7 @@ import {
   createPost,
   likePost,
   savePost,
-  getSidebarData, 
+  getSidebarData,
   followUser,
   getPendingRequests,
   respondToRequest,
@@ -33,7 +33,7 @@ export const usePost = () => {
   } = context;
 
   const stats = sidebarData.stats;
-  const suggestions = sidebarData.suggestions
+  const suggestions = sidebarData.suggestions;
 
   const handleGetFeed = async () => {
     setLoading(true);
@@ -75,54 +75,51 @@ export const usePost = () => {
     }
   };
 
-  const handleGetSidebar = async () => {
-    try{
-      const data = await getSidebarData();
-      setSidebarData({
-        stats: data.stats,
-        suggestions: data.suggestions,
-      });
-    setUser(data.currentUser);
-
-    }catch(error){
-      console.error("Error fetching sidebar", error)
-    }
-    
-  };
-
   const handleGetRequests = async () => {
     const data = await getPendingRequests();
     setPendingRequests(data.requests);
   };
 
+  const handleGetSidebar = async () => {
+    try {
+      const data = await getSidebarData();
+      // No need to filter here anymore, the backend handles it now!
+      setSidebarData({
+        stats: data.stats,
+        suggestions: data.suggestions,
+      });
+      setUser(data.currentUser);
+    } catch (error) {
+      console.error("Error fetching sidebar", error);
+    }
+  };
+
   const handleFollowUser = async (username) => {
     try {
       await followUser(username);
+      // REFRESH data from server immediately
       await handleGetSidebar();
     } catch (error) {
       console.error("Failed to follow user:", error);
     }
   };
 
-
   const handleRespondRequest = async (requestId, action) => {
     try {
       await respondToRequest(requestId, action);
-
+      // REFRESH both lists to update badge and sidebar counts
       await handleGetRequests();
       await handleGetSidebar();
     } catch (error) {
       console.error("Failed to respond to request:", error);
     }
   };
-
   
-
-  useEffect(() => {
-    handleGetFeed();
-    handleGetSidebar();
-    handleGetRequests();
-  }, []);
+  // useEffect(() => {
+  //   handleGetFeed();
+  //   handleGetSidebar();
+  //   handleGetRequests();
+  // }, []);
 
   return {
     stats,
@@ -140,5 +137,6 @@ export const usePost = () => {
     handleFollowUser,
     handleRespondRequest,
     handleGetSidebar,
+    handleGetRequests,
   };
-};;
+};
