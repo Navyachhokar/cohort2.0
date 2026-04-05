@@ -83,7 +83,6 @@ export const usePost = () => {
   const handleGetSidebar = async () => {
     try {
       const data = await getSidebarData();
-      // No need to filter here anymore, the backend handles it now!
       setSidebarData({
         stats: data.stats,
         suggestions: data.suggestions,
@@ -97,7 +96,6 @@ export const usePost = () => {
   const handleFollowUser = async (username) => {
     try {
       await followUser(username);
-      // REFRESH data from server immediately
       await handleGetSidebar();
     } catch (error) {
       console.error("Failed to follow user:", error);
@@ -107,19 +105,14 @@ export const usePost = () => {
   const handleRespondRequest = async (requestId, action) => {
     try {
       await respondToRequest(requestId, action);
-      // REFRESH both lists to update badge and sidebar counts
       await handleGetRequests();
       await handleGetSidebar();
     } catch (error) {
       console.error("Failed to respond to request:", error);
     }
   };
-  
-  // useEffect(() => {
-  //   handleGetFeed();
-  //   handleGetSidebar();
-  //   handleGetRequests();
-  // }, []);
+
+
 
   return {
     stats,

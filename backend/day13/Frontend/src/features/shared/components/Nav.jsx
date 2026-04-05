@@ -27,7 +27,7 @@ const Nav = () => {
 
       <Tooltip.Provider delayDuration={200}>
         <div className="right">
-          {/* 1. HOME ICON: Visible ONLY if NOT on Home Page */}
+
           {!isHomePage && (
             <Tooltip.Root>
               <Tooltip.Trigger asChild>
@@ -57,18 +57,17 @@ const Nav = () => {
             </Tooltip.Root>
           )}
 
-          {/* 2. HEART ICON: Always visible, toggles dropdown */}
           <div className="heart-container">
             <Tooltip.Root>
               <Tooltip.Trigger asChild>
                 <button
-                  onClick={() => setShowRequests(!showRequests)} // Toggle dropdown
+                  onClick={() => setShowRequests(!showRequests)} 
                   className={`nav-icon-btn ${showRequests ? "active" : ""}`}
                 >
                   <div className="icon-wrapper">
                     <svg
                       viewBox="0 0 24 24"
-                      fill={showRequests ? "red" : "none"} // Fill red when open
+                      fill={showRequests ? "red" : "none"} 
                       stroke={showRequests ? "red" : "currentColor"}
                       strokeWidth="2"
                       width="24"
@@ -96,7 +95,6 @@ const Nav = () => {
               </Tooltip.Portal>
             </Tooltip.Root>
 
-            {/* 4. THE DROPDOWN CONTENT */}
             {showRequests && (
               <div className="requests-dropdown">
                 <p className="dropdown-title">Follow Requests</p>
@@ -133,7 +131,6 @@ const Nav = () => {
             )}
           </div>
 
-          {/* 3. CREATE ICON: Visible ONLY if on Home Page */}
           {isHomePage && (
             <Tooltip.Root>
               <Tooltip.Trigger asChild>

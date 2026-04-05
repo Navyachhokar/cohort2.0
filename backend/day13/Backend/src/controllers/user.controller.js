@@ -105,13 +105,11 @@ async function getSidebarData(req, res) {
   try {
     const currentUserUsername = req.user.username;
 
-    // 1. Get the actual user object
     const currentUser = await userModel.findOne({
       username: currentUserUsername,
     });
 
-    // 2. Count Followers/Following correctly using the STRING username
-    // (since your followModel stores strings, not ObjectIds)
+
     const followersCount = await followModel.countDocuments({
       followee: currentUserUsername,
       status: "accepted",
@@ -122,18 +120,14 @@ async function getSidebarData(req, res) {
       status: "accepted",
     });
 
-    // 3. Find anyone I have ALREADY interacted with (pending or accepted)
     const myInteractions = await followModel.find({
       follower: currentUserUsername,
     });
 
-    // Extract the usernames of people I already followed/requested
     const alreadyInteractedWith = myInteractions.map((f) => f.followee);
 
-    // Add myself to the excluded list
     alreadyInteractedWith.push(currentUserUsername);
 
-    // 4. Suggestions: People NOT in the excluded list
     const suggestions = await userModel
       .find({
         username: { $nin: alreadyInteractedWith },
